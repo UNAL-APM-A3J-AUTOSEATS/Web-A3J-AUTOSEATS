@@ -82,7 +82,7 @@
 					<hr>
 					
 					<h2>Planta de producción</h2>
-				  	<p>[BLA BLA BLA]</p>
+				  	<p  style="text-align:justify">Para visualizar y analizar de mejor forma una planta de fabricación de sillas para buses con reposabrazos y el correspondiente diseño de la planta automatizada con y sin reposabrazos, se hace uso de la herramienta Tecnomatix Plant Simulation. Dada la complejidad del proceso de fabricación se consideran 5 subprocesos principales asociados a las partes que componen el producto (reposabrazos, forros, cojines, base/estructura y ensamble global), en donde se va a buscar los procesos que son automatizables dentro de cada subproceso.  </p>
 
 				  	<div class="row">
 						<div class="col-lg-6 video-box">
@@ -96,11 +96,76 @@
 							width="100%" height="300"></iframe>
 						</div>
 					</div>
-		
+
+					<h2>Takt time</h2>
+					<p style="text-align:justify">Antes de desarrollar el diagrama VSM se procedió a calcular el tiempo de Takt el cual depende del tiempo trabajado por turno diario y la demanda de sillas de buses intermunicipales. Como se indicó en <a href="economica.html">Módulo de gestión económica</a>, la demanda anual de sillas en Bogotá 608.000, si se proyecta que se quiere cubrir el 40% de la demanda, entonces los cálculos quedarían de la siguiente manera:
+					</p>
+					
+					<table class="tg">
+						<thead>
+						  <tr>
+							<th class="tg-bobw">Variable</th>
+							<th class="tg-bobw">Resultado</th>
+							<th class="tg-bobw">Medida</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+							<td class="tg-7zrl">Jornada laboral</td>
+							<td class="tg-8d8j">10</td>
+							<td class="tg-8d8j">Horas</td>
+						  </tr>
+						  <tr>
+							<td class="tg-7zrl">Tiempo de almuerzo</td>
+							<td class="tg-8d8j">2</td>
+							<td class="tg-8d8j">Horas</td>
+						  </tr>
+						  <tr>
+							<td class="tg-7zrl">Número de turnos</td>
+							<td class="tg-8d8j">1</td>
+							<td class="tg-8d8j">Diarios</td>
+						  </tr>
+						  <tr>
+							<td class="tg-7zrl">Días H. por mes</td>
+							<td class="tg-8d8j">22</td>
+							<td class="tg-8d8j">Días</td>
+						  </tr>
+						  <tr>
+							<td class="tg-7zrl">Demanda mensual</td>
+							<td class="tg-3yw8">20267</td>
+							<td class="tg-8d8j">Sillas</td>
+						  </tr>
+						  <tr>
+							<td class="tg-7zrl">Tiempo disponible</td>
+							<td class="tg-8d8j">8</td>
+							<td class="tg-8d8j">Horas</td>
+						  </tr>
+						  <tr>
+							<td class="tg-7zrl">Tiempo disponible</td>
+							<td class="tg-8d8j">480</td>
+							<td class="tg-8d8j">Min</td>
+						  </tr>
+						  <tr>
+							<td class="tg-7zrl">Tiempo disponible</td>
+							<td class="tg-8d8j">28800</td>
+							<td class="tg-8d8j">Seg</td>
+						  </tr>
+						  <tr>
+							<td class="tg-7zrl">Demanda diaria</td>
+							<td class="tg-8d8j">921,212121</td>
+							<td class="tg-8d8j">Sillas/día</td>
+						  </tr>
+						  <tr>
+							<td class="tg-7zrl">Tiempo Takt seg</td>
+							<td class="tg-3yw8">31,2631579</td>
+							<td class="tg-8d8j">Seg/sillas</td>
+						  </tr>
+						</tbody>
+						</table>
 
 				  	<h2>VSM</h2>
-				  	<p>[BLA BLA BLA]</p>
-
+				  	<p style="text-align:justify">Para evaluar las plantas de producción actual y automatizada se utiliza la librería para diagramas VSM disponible en Plant Simulation, esta herramienta nos permite observar las diferentes estaciones de trabajo los tiempos de producción de las diferentes líneas de producción o subprocesos y cómo sería el manejo del material para producción.</p>
+					
 				  	<div class="row">
 						<div class="col-lg-6 video-box">
 						  <h3>VSM Manual</h3>
@@ -116,6 +181,42 @@
 		  
 				</div>
 			</div>
+
+			<div class="container">
+				<div class="section-title" data-aos="fade-up">
+					<h2>Indicadores de producción</h2>
+				<div class="container wow fadeInUp">
+					<h3>Estadisticas de recursos</h3>
+					<div class="row">        
+						<div class="col-md-6 about-content-img">
+							<h4>Proceso manual</h4>
+							<img src="img/man1.jpeg"  style="max-width: 100%; height: auto; "  alt="Estadísticas Manual" title=""/>      
+						  </div>
+						<div class="col-md-6 about-content-img">
+							<h4>Proceso automatizado</h4>
+						  <img src="img/auto1.jpeg"  style="max-width: 100%; height: auto; "  alt="Estadísticas Auto 1" title=""/>  
+						  <img src="img/auto2.jpeg"  style="max-width: 100%; height: auto; "  alt="Estadísticas Auto 2" title=""/>  
+						  <img src="img/auto3.jpeg"  style="max-width: 100%; height: auto; "  alt="Estadísticas Auto 3" title=""/>        
+						</div>
+					  </div>
+				</div>   
+				
+				<div class="container wow fadeInUp">
+					<h3>OEE</h3>
+					<div class="row">        
+						<div class="col-md-6 about-content-img">
+							<h4>Proceso manual</h4>
+							<img src="img/manOEE.jpeg" alt="OEE Manual" title=""/>      
+						  </div>
+						<div class="col-md-6 about-content-img">
+							<h4>Proceso automatizado</h4>
+						  <img src="img/autoOEE.jpeg" alt="OEE Auto" title=""/>        
+						</div>
+					  </div>
+				</div>   
+				</div>
+			</div>
+
 
 			<footer>
 				<div class="container">
