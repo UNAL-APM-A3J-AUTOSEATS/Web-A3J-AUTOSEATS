@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="" />
 		<meta name="author" content="http://webthemez.com" />
+		<link href="img/icon.png" rel="shortcut icon">
 		<!-- css -->
 		<link href="css/bootstrap.min.css" rel="stylesheet" />
 		<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
@@ -74,51 +75,84 @@
             <div class="container">
 
 				<div class="section-title" data-aos="fade-up">
-					<p  style="text-align:justify"> </p>
-					
-					<h2> Mapeo de señales: </h2>
-					<h3> Mapeo señales - Celda inyección PU </h3>
-					<p  style="text-align:justify">  </p>
-					<img src="img/Mapeo-InyeccionPU.png"  style="max-width: 100%; height: auto; " class="center"  alt="" title=""/>
-					<br>
-					<h3> Mapeo señales - Celda Extrucción PP </h3>
-					<p  style="text-align:justify">  </p>
-					<img src="img/Mapeo-ExtruccionPP.png"  style="max-width: 100%; height: auto; " class="center"  alt="" title=""/>
-					<br>
-					<h3> Mapeo señales - Celda Soldadura </h3>
-					<p  style="text-align:justify">  </p>
-					<img src="img/Mapeo-Soldadura.png"  style="max-width: 100%; height: auto; " class="center"  alt="" title=""/>
-					<br>
-					
+					<p  style="text-align:justify"> </p>		
 				  	
 					<h2> Diagramas Grafset: </h2>
+					<p  style="text-align:justify">  A continuación se presenta los diagramas Grafset desarrollados para las diferentes partes de la planta. En primer lugar se encuentra el diagrama general donde se realiza el control de procesos general de cada celda y en luego se realiza definen el proceso realizado en la producción normal (véase Guía Gemma para más información) de cada una de las celdas.</p>
+					<p  style="text-align:justify">  Se destaca que se hizo dos diagramas Grafset para cada uno: Nivel 1 que realiza una descripción funcional y Nivel 2 que realiza una descripción tecnológica.</p>					
+
+					<h3> Grafset nivel 1 - Planta </h3>
+					<p  style="text-align:justify">  </p>
+					<img src="img/Grafset1-Planta.png"  style="max-width: 80%; height: auto; " class="center"  alt="" title=""/>
+					<br>
+					<h3> Grafset nivel 2 - Planta </h3>
+					<p  style="text-align:justify">  </p>
+					<img src="img/Grafset2-Planta.png"   style="max-width: 80%; height: auto; " class="center"  alt="" title=""/>
+					<br>
 					<h3> Grafset nivel 1 - Celda inyección PU </h3>
 					<p  style="text-align:justify">  </p>
-					<img src="img/Grafset1-InyeccionPU.png"  style="max-width: 100%; height: auto; " class="center"  alt="" title=""/>
+					<img src="img/Grafset1-InyeccionPU.png"  style="max-width: 80%; height: auto; " class="center"  alt="" title=""/>
 					<br>
 					<h3> Grafset nivel 2 - Celda inyección PU </h3>
 					<p  style="text-align:justify">  </p>
-					<img src="img/Grafset2-InyeccionPU.png"   style="max-width: 100%; height: auto; " class="center"  alt="" title=""/>
+					<img src="img/Grafset2-InyeccionPU.png"   style="max-width: 80%; height: auto; " class="center"  alt="" title=""/>
 					<br>
 					<h3> Grafset nivel 1 - Celda Extrucción PP </h3>
 					<p  style="text-align:justify">  </p>
-					<img src="img/Grafset1-ExtruccionPP.png"  style="max-width: 100%; height: auto; " class="center"  alt="" title=""/>
+					<img src="img/Grafset1-ExtruccionPP.png"  style="max-width: 80%; height: auto; " class="center"  alt="" title=""/>
 					<br>
 					<h3> Grafset nivel 2 - Celda Extrucción PP </h3>
 					<p  style="text-align:justify">  </p>
-					<img src="img/Grafset2-ExtruccionPP.png"   style="max-width: 100%; height: auto; " class="center"  alt="" title=""/>
+					<img src="img/Grafset2-ExtruccionPP.png"   style="max-width: 80%; height: auto; " class="center"  alt="" title=""/>
 					<br>
 					<h3> Grafset nivel 1 - Celda Soldadura </h3>
 					<p  style="text-align:justify">  </p>
-					<img src="img/Grafset1-Soldadura.png"  style="max-width: 100%; height: auto; " class="center"  alt="" title=""/>
+					<img src="img/Grafset1-Soldadura.png"  style="max-width: 80%; height: auto; " class="center"  alt="" title=""/>
 					<br>
 					<h3> Grafset nivel 2 - Celda Soldadura </h3>
 					<p  style="text-align:justify">  </p>
-					<img src="img/Grafset2-Soldadura.png"   style="max-width: 100%; height: auto; " class="center"  alt="" title=""/>
+					<img src="img/Grafset2-Soldadura.png"   style="max-width: 80%; height: auto; " class="center"  alt="" title=""/>
 					<br>
 					
 
+					<h2> Implementación parcial Guía GEMMA</h2>
+					<p  style="text-align:justify"> Para realizar una implementación segura en una planta física, en el proceso de elaboración del programa se tuvo en cuenta la guía GEMMA, para definir los diferentes estados de cada una de las celdas. Estos estados y las transiciones entre ellas se encuentran mostradas en la siguiente figura. Donde las señales de start, stop, emergency stop y mantenimiento, corresponde a los botones de los software SCADA de cada uno.</p>
+					<img src="img/Diagrama_GEMMA.png"   style="max-width: 60%; height: auto; " class="center"  alt="" title=""/>
+					<br>
+
+
+					<h2> Mapeo de señales: </h2>
+					<p  style="text-align:justify">  A continuación se muestra el mapeo de señales realizado para la comunicación de los software NX y Studio 5000 donde se señalan el tipo de dispositivo (sensor/actuador) y una descripción breve de la señal.</p>
+
+					<h3> Mapeo señales - Celda inyección PU </h3>
+					<p  style="text-align:justify">  </p>
+					<img src="img/Mapeo-InyeccionPU.png"  style="max-width: 50%; height: auto; " class="center"  alt="" title=""/>
+					<br>
+					<h3> Mapeo señales - Celda Extrucción PP </h3>
+					<p  style="text-align:justify">  </p>
+					<img src="img/Mapeo-ExtruccionPP.png"  style="max-width: 50%; height: auto; " class="center"  alt="" title=""/>
+					<br>
+					<h3> Mapeo señales - Celda Soldadura </h3>
+					<p  style="text-align:justify">  </p>
+					<img src="img/Mapeo-Soldadura.png"  style="max-width: 50%; height: auto; " class="center"  alt="" title=""/>
+					<br>
+					
+
+					<h2> Selección de controlador industrial: </h2>
+					<p  style="text-align:justify">  Para la selección del PLC se tuvo en cuenta 3 parámetros: número de tags manejados, capacidad de computo, y número y tipo de entradas y salidas.</p>
+					<p  style="text-align:justify">  Cabe destacar de que todos los programas de las celdas se realizaron en un mismo archivo de PLC para fines académicos, se realizó un análisis de cada parámetro de manera individual y global.</p>
+					
+					<h4> 1. Número de tags:</h4>
+					<p  style="text-align:justify">  Después de la elaboración de los programas en Studio 5000 se realizó la enumeración de los tags utilizados. En total da como resultado 128 tags, siendo utilizados 45 en la celda de extrucción de polipropileno, 38 en la celda de inyección de poliuretano y 48 en la celda de soldadura robotizada (nótese que hay tags utilizados en más de una celda).</p>
+					<h4> 2. Capacidad de procesamiento:</h4>
+					<p  style="text-align:justify">  En ningún proceso se identificó procesos de alto rendimiento que necesiten tiempos de respuesta en ordenes de microsegundos, aparte de los internos a la comunicación y procesamiento de periféricos del PLC. Por lo que esté parámetro no va a ser discriminatorio en el proceso de selección.</p>
+					<h4> 3. Número de entradas y salidas:</h4>
+					<p  style="text-align:justify">  El número de entradas y salidas de cada celda está directamente relacionado al mapeo de señales realizado anteriomente, ya que al realizar una implementación con componentes físicos, estas conexiones van a reemplazar a la realizadas en el Software NX.</p>
+					<p  style="text-align:justify">  Entonces se tiene que para la celda de inyección de poliuretano se necesita 3 DI, 1 AI, 3 DO y 1 AO. Para la celda de extrucción de polipropileno se necesita 7 AI y 2 DO. Y para la celda de soldadura robotizada se necesita 4 DI, 1 AI, 2 DO y 1 AO.</p>
+					<p  style="text-align:justify">  Dando un total de 7 DI, 9 AI, 7 DO y 2 AO.</p>
+
 					<h2> Videos explicación: </h2>
+					A continuación se muestran 3 videos donde se explica en detalle los programas desarrollados para los controladores en los software NX y Studio5000.
 					<p  style="text-align:justify">  </p>
 					<h3> Celda inyección de PU</h3>
 					<iframe src="https://drive.google.com/file/d/1ZTbDxK-awAP-M8G5oUxc8g7AQzbQepvp/preview" width="640" height="480" allow="autoplay"></iframe>
