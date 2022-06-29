@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="" />
 		<meta name="author" content="http://webthemez.com" />
+		<link href="img/icon.png" rel="shortcut icon">
 		<!-- css -->
 		<link href="css/bootstrap.min.css" rel="stylesheet" />
 		<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
@@ -78,6 +79,7 @@
 
 				<div class="section-title" data-aos="fade-up">
 					
+					<h2>Hoja de ruta</h2>
 				  	<p  style="text-align:justify">Para iniciar el proceso de diseño de una celda de manufactura robotizada se requiere de una planeación del trabajo a realizar, en donde se establezca un vínculo entre la necesidad de la implementación de la celda robotizada y el diseño de esta. Esto ya que claramente el realizar un diseño de optimización para una planta de producción sin tener en cuenta la situación actual de la misma hace que el beneficio, funcionalidad e implementación de la celda no sean los adecuados. De manera que a continuación se presenta una hoja de ruta diseñada por el equipo A3J, para indicar los pasos a seguir en el diseño de una celda robotizada y en la optimización de los procesos de producción de una planta: </p>
 					
 					<div style="width: 80%;">
@@ -86,13 +88,42 @@
 							</iframe> 
 						</div> 
 					</div>
-				  	<h2>Celda de manufactura propuesta</h2>
-					  <p  style="text-align:justify">Luego de realizar un análisis del margen de mejora y evaluar alternativas de desarrollo, se planteó un diseño de celda robotizada para el módulo de soldadura de la planta de producción, ya que se evidencia de manera clara que en este módulo es donde se produce el principal cuello de botella dentro del proceso de fabricación de las sillas.</p>
-					  <img src="img/layout.PNG"  class="center" style="width:80%"  alt="VSM Manual" title=""/>
-					  <br>
-  
-					</div>
+					
+					<h2>Descripción de celda:</h2>
+					<p  style="text-align:justify">Los robots en este caso el único robot que trabajara en la celda únicamente se dedicara a realizar cordones de soldadura,se ingresan perfiles de acero estructural A36 cortados con las medidas adecuadas estos se ubican en una matriz de sujeción en el cual se acomodan los perfiles de acuerdo a la forma de la estructura que se quiere conseguir, luego salen los perfiles debidamente soldados en una estructura para la silla.</p>
+					<p  style="text-align:justify">La celda en un ciclo primero deberá estar en pausa , es decir estará parado el robot mientras un operario acomoda los perfiles en el matriz de sujeción (Setup 1), luego este se retirara de la celda y el robot empezará a realizar los cordones de soldadura en las trayectorias que tiene programadas(Work 1), luego el robot hará una nueva parada en una posición segura donde el operario volverá a entrar al área de trabajo y deberá cambiar la posición del marco en el molde(Setup 2), luego de que este salga del área de trabajo del robot el robot volverá a trabajar y terminará de soldar en la estructura, este volverá a parar en una posición segura (Work 2) y el operario sacara la estructura debidamente soldada del molde (Exit).</p>
+					<p  style="text-align:justify">Así tenemos el duty cycle de la celda es decir el tiempo en el que el robot está trabajando, además sabemos que el tiempo de procesamiento de la celda que es de 420 segundos, es decir 7 minutos.</p>
+					<img src="img/Duty_Time.png"  class="center" style="width:20%"  alt="VSM Manual" title=""/>
+					<br>
+					
+					<p  style="text-align:justify">La celda contiene los siguientes elementos:</p>
+					<ul>
+						<li>Robot soldador</li>
+						<li>Herramienta para soldadura compatible con robot</li>
+						<li>Equipo soldador: alimentador de material, controlador de corriente</li>
+						<li>Matriz de sujeción de piezas para soldar: Con eje rotativo de accionamiento manual, sujetadores de piezas de accionamiento manual, con espacio para soldar dos espaldares simultáneos</li>
+						<li>Banda transportadoras: Entrada de piezas a soldar, salida de pieza soldada</li>
+						<li>Equipos de protección: Cabina para protección de radiación lumínica, sistema de extracción e intercambio de gases</li>
+						<li>Equipos control de calidad para proceso de soldadura: Medios ópticos para inspección visual  (Lupas, espejos, endoscopios, etc.), galgas inspección geométrica, flexómetro.</li>
+					</ul>
+
+				  	<h2>Layout de Celda de manufactura robotizada propuesta</h2>
+					<p  style="text-align:justify">Luego de realizar un análisis del margen de mejora y evaluar alternativas de desarrollo, se planteó un diseño de celda robotizada para el módulo de soldadura de la planta de producción, ya que se evidencia de manera clara que en este módulo es donde se produce el principal cuello de botella dentro del proceso de fabricación de las sillas.</p>
+					<img src="img/layout.PNG"  class="center" style="width:80%"  alt="VSM Manual" title=""/>
+					<br>
+					
+					<h2>Identificación y caracterización de peligros</h2>
+					<p  style="text-align:justify">Se realizó la determinación de peligros y para su identificación de niveles de riesgo se estableció una clasificación basada en nivel de probabilidad y de impacto que pueda tener la ocurrencia de éste evento sobre el proceso, para ello se usó una escala de 1 a 3 donde 1 es baja probabilidad y bajo impacto, 2 es medio y 3 alto. Posteriormente la combinación de estos dos factores determina el nivel de riesgo en una escala de bajo, medio, alto o extremo.</p>
+					<img src="img/Nivel_peligro.png"  class="center" style="max-width: 40%; height: auto; "  alt="VSM Manual" title=""/>
+					<br>
+					<img src="img/Tabla_peligros.jpg"  class="center" style="width:50%"  alt="VSM Manual" title=""/>
+
+					<h2>Simulación en RobotStudio</h2>
+					<img src="img/Celda_RS.png"  class="center" style="width:50%"  alt="VSM Manual" title=""/>
+					<br>
+				
 				</div>
+			</div>
 
 			<footer>
 				<div class="container">
