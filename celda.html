@@ -81,47 +81,138 @@
 					
 					<h2>Hoja de ruta</h2>
 				  	<p  style="text-align:justify">Para iniciar el proceso de diseño de una celda de manufactura robotizada se requiere de una planeación del trabajo a realizar, en donde se establezca un vínculo entre la necesidad de la implementación de la celda robotizada y el diseño de esta. Esto ya que claramente el realizar un diseño de optimización para una planta de producción sin tener en cuenta la situación actual de la misma hace que el beneficio, funcionalidad e implementación de la celda no sean los adecuados. De manera que a continuación se presenta una hoja de ruta diseñada por el equipo A3J, para indicar los pasos a seguir en el diseño de una celda robotizada y en la optimización de los procesos de producción de una planta: </p>
+					<center>
+						<div style="width: 80%;">
+							<div style="position: relative; padding-bottom: 100.00%; padding-top: 0; height: 0;">
+								<iframe frameborder="0" width="800" height="1600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/62882951fb80e70019f64cb8" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all">
+								</iframe> 
+							</div> 
+						</div>
+					</center>
 					
-					<div style="width: 80%;">
-						<div style="position: relative; padding-bottom: 100.00%; padding-top: 0; height: 0;">
-							<iframe frameborder="0" width="800" height="1600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/62882951fb80e70019f64cb8" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all">
-							</iframe> 
-						</div> 
-					</div>
-					
-					<h2>Descripción de celda:</h2>
-					<p  style="text-align:justify">Los robots en este caso el único robot que trabajara en la celda únicamente se dedicara a realizar cordones de soldadura,se ingresan perfiles de acero estructural A36 cortados con las medidas adecuadas estos se ubican en una matriz de sujeción en el cual se acomodan los perfiles de acuerdo a la forma de la estructura que se quiere conseguir, luego salen los perfiles debidamente soldados en una estructura para la silla.</p>
-					<p  style="text-align:justify">La celda en un ciclo primero deberá estar en pausa , es decir estará parado el robot mientras un operario acomoda los perfiles en el matriz de sujeción (Setup 1), luego este se retirara de la celda y el robot empezará a realizar los cordones de soldadura en las trayectorias que tiene programadas(Work 1), luego el robot hará una nueva parada en una posición segura donde el operario volverá a entrar al área de trabajo y deberá cambiar la posición del marco en el molde(Setup 2), luego de que este salga del área de trabajo del robot el robot volverá a trabajar y terminará de soldar en la estructura, este volverá a parar en una posición segura (Work 2) y el operario sacara la estructura debidamente soldada del molde (Exit).</p>
-					<p  style="text-align:justify">Así tenemos el duty cycle de la celda es decir el tiempo en el que el robot está trabajando, además sabemos que el tiempo de procesamiento de la celda que es de 420 segundos, es decir 7 minutos.</p>
-					<img src="img/Duty_Time.png"  class="center" style="width:20%"  alt="VSM Manual" title=""/>
+					<h2>Descripción del producto</h2>
+					<p  style="text-align:justify">Como se ha planteado anteriormente, el principal cuello de botella está ubicado en el proceso de soldadura manual de la estructura metálica de las sillas, donde se requiere de realizar la soldadura de 3 piezas principales, las cuales son las patas, la base del asiento y los espaldares.</p>
+					<center>
+						<img src="img/Estruc.png"  class="center" style="width:20%"  alt="VSM Manual" title=""/>
+					</center>
 					<br>
 					
+					<h2>Justificación para el proceso de optimización de la celda</h2>
+					<p  style="text-align:justify">Durante este proceso el operario es expuesto a variados peligros para su salud, asociados a la exposición de gases, radiación ultravioleta y luz intensa, chispa y ruido, que a largo plazo pueden producir problemas respiratorios, pérdida de la visión y molestias oculares, quemaduras, pérdida gradual del sentido auditivo y aumento de presión arterial. Muchos de estos factores pueden ser reducidos por medio de los elementos de protección como guantes de puño largo resistentes al fuego, botas con punta de acero, delantal de piel, máscara, overoles resistentes al fuego, gafas de seguridad, cascos y botas altas. Finalmente, los soldadores tienen una alta incidencia en quejas musculoesqueléticas que para evitarlas pueden aplicar diferentes técnicas de postura. Sin embargo, nada puede prevenir el error humano y reducir a cero todos los peligros y riesgos a los que estarán expuestos los operarios soldadores.</p>
+					<br>
+
+					<h2>Propuesta de celda robotizada</h2>
+					<p  style="text-align:justify">Se plantea la implementación de 3 celdas de soldadura robotizadas en donde cada una de ellas se encargará individualmente de producir las patas, la base del asiento y los espaldares, los cuales requieren de procesos sencillos de soldadura, para que finalmente una persona se encargue de realizar la soldadura necesaria para el ensamble de la estructura completa, ya que tiene zonas de difícil acceso y es un proceso mucho más complejo en comparación con la soldadura de los 3 conjuntos que conforman  la estructura.</p>
+					<p  style="text-align:justify">Las 3 celdas de soldadura van a ser exactamente iguales, teniendo en cuenta únicamente que lo que varía son las trayectorias y cordones de soldadura que haría el robot y la matriz o base en donde reposan y se aseguran las piezas del producto durante la soldadura.</p>
+					<p  style="text-align:justify">En este caso, el único robot que trabajara en cada celda se dedicará específicamente a realizar cordones de soldadura, se ingresan perfiles de acero estructural A36 cortados con las medidas adecuadas estos se ubican en una matriz de sujeción, en el cual, se acomodan los perfiles de acuerdo con la forma de la estructura que se quiere conseguir, luego, salen los perfiles debidamente soldados en una estructura para la silla. </p>
+					<br>
+					
+					<h2>Flujo de trabajo y ciclo útil</h2>
+					<p  style="text-align:justify">La celda en un ciclo primero deberá estar en pausa , es decir estará parado el robot mientras un operario acomoda los perfiles en el matriz de sujeción (Setup 1), luego este se retirara de la celda y el robot empezará a realizar los cordones de soldadura en las trayectorias que tiene programadas (Work 1), luego el robot hará una nueva parada en una posición segura donde el operario volverá a entrar al área de trabajo y deberá cambiar la posición del marco en el molde (Setup 2), luego de que este salga del área de trabajo del robot el robot volverá a trabajar y terminará de soldar en la estructura, este volverá a parar en una posición segura (Work 2) y el operario sacara la estructura debidamente soldada del molde (Exit).</p>
+					<p  style="text-align:justify">Así tenemos el duty cycle de la celda es decir el tiempo en el que el robot está trabajando, además sabemos que el tiempo de procesamiento de la celda que es de 420 segundos, es decir 7 minutos.</p>
+					<center>
+						<img src="img/Duty_Time.png"  class="center" style="width:20%"  alt="VSM Manual" title=""/>
+					</center>
+						<h3>Diagrama de flujo de trabajo</h3>
+						<center>
+							<img src="img/Flujo.png"  class="center" style="width:30%"  alt="VSM Manual" title=""/>
+						</center>
+						<br>
+					
+					<h2>Diseño de a celda</h2>
+					<h3>Selección de herramienta</h3>
+					<h4>Antorcha de soldadura WH455D 22°</h4>
+					<ul>
+						<li>Tipo de soldadura: MIG (Metal Inert Gas o soldadura por gas inerte)</li>
+						<li>Peso total de antorcha de soldadura: 3 kg</li>
+						<li>Longitud del conjunto de cables: 3m (peso por metro aprox. 0,7 kg)</li>
+					</ul>
+
+					<center>
+						<img src="img/xd.png"  class="center" style="width:70%"  alt="VSM Manual" title=""/>
+						<img src="img/xa.png"  class="center" style="width:70%"  alt="VSM Manual" title=""/>
+						<img src="img/dx.PNG"  class="center" style="width:20%"  alt="VSM Manual" title=""/>
+					</center>
+
+
+
+					<h3>Selección de robot</h3>
+					<h4>IRB 2600</h4>
+					<p  style="text-align:justify"> Alcance máximo: 1,65m</p>
+					<p  style="text-align:justify"> Capacidad máxima de carga: 12kg</p>
+					<center>
+						<img src="img/irb2600.jpg"  class="center" style="width:20%"  alt="VSM Manual" title=""/>
+					</center>
+					
+					<h5>Espacio de trabajo del robot</h5>
+					<p  style="text-align:justify">Teniendo en cuenta las dimensiones generales que ocuparán las piezas en la base para soldadura se realiza la selección del alcance necesario que debe tener el robot.</p>
+					<ul>
+						<li>Base del asiento: 925mmx386mm</li>
+						<li>Espaldares: 925mmx750mm</li>
+						<li>Patas laterales: 760mmx362mm</li>
+					</ul>
+					<p  style="text-align:justify">Se realizó una prueba de posicionamiento en robot studio utilizando la matriz correspondiente de mayor área superficial para comprobar que el espacio de trabajo del robot satisface las necesidades de la celda robotizada.</p>
+					<center>
+						<img src="img/alconh.png"  class="center" style="width:35%"  alt="VSM Manual" title=""/>
+						<img src="img/alsinh1.png"  class="center" style="width:32%"  alt="VSM Manual" title=""/>
+						<img src="img/alsinh2.png"  class="center" style="width:31%"  alt="VSM Manual" title=""/>
+					</center>
+					<h5>Capacidad de carga del robot</h5>
+
+					<p  style="text-align:justify">Teniendo en cuenta que se está utilizando para una aplicación de soldadura, las únicas cargas del robot serán la herramienta y el peso del cableado y mangueras para el flujo de material. De manera que se utiliza la herramienta RobotLoad Application, donde se plantean las 2 cargas del robot: la carga a lo largo del brazo superior correspondiente al cableado y la carga producida por la herramienta.</p>
+					<center>
+						<img src="img/cargas.png"  class="center" style="width:70%"  alt="VSM Manual" title=""/>
+					</center>
+
+					<h3>Selección de posicionador</h3>
+					<h4>IRBP L</h4>
+					<p  style="text-align:justify">La celda esta compuesta por un posicionador IRBP L que permite un grado de libertad para el posicionamiento del producto en el proceso de soldadura y posee capacidades suficientes para soportar el peso de las piezas a soldar junto con sus respectivos soportes.</p>
+					<ul>
+						<li>Capacidad de carga: 300 kg</li>
+						<li>Longitud de separación: 1250 mm</li>
+					</ul>
+					<center>
+						<img src="img/posi.jpg"  class="center" style="width:30%"  alt="VSM Manual" title=""/>
+					</center>
+						
+						
+					<h3>Selección de componentes de la celda</h3>
 					<p  style="text-align:justify">La celda contiene los siguientes elementos:</p>
 					<ul>
-						<li>Robot soldador</li>
-						<li>Herramienta para soldadura compatible con robot</li>
-						<li>Equipo soldador: alimentador de material, controlador de corriente</li>
-						<li>Matriz de sujeción de piezas para soldar: Con eje rotativo de accionamiento manual, sujetadores de piezas de accionamiento manual, con espacio para soldar dos espaldares simultáneos</li>
-						<li>Banda transportadoras: Entrada de piezas a soldar, salida de pieza soldada</li>
-						<li>Equipos de protección: Cabina para protección de radiación lumínica, sistema de extracción e intercambio de gases</li>
+						<li>Equipo robot: Panel de operación e indicación - Teach Pendant - Stack light, estación de limpieza de la antorcha: Torch cleaner binzel, módulo de control de la celda IRC-5, módulo para control de soldadura por arco Auto-Axcess 450, tanques de alimentación de gases, base para el robot, pallet.</li>
+						<li>Matriz de sujeción de piezas para soldar IRBP L: Con eje rotativo de accionamiento manual, sujetadores de piezas de accionamiento manual, con espacio para soldar dos espaldares simultáneos.</li>
+						<li>Banda transportadoras: Entrada de piezas a soldar, salida de pieza soldada.</li>
+						<li>Equipos de protección: Cabina para protección de radiación lumínica con barrera de protección visual, paredes de seguridad y ventanas de monitoreo, sistema de extracción e intercambio de gases.</li>
 						<li>Equipos control de calidad para proceso de soldadura: Medios ópticos para inspección visual  (Lupas, espejos, endoscopios, etc.), galgas inspección geométrica, flexómetro.</li>
 					</ul>
 
 				  	<h2>Layout de Celda de manufactura robotizada propuesta</h2>
 					<p  style="text-align:justify">Luego de realizar un análisis del margen de mejora y evaluar alternativas de desarrollo, se planteó un diseño de celda robotizada para el módulo de soldadura de la planta de producción, ya que se evidencia de manera clara que en este módulo es donde se produce el principal cuello de botella dentro del proceso de fabricación de las sillas.</p>
-					<img src="img/layout.PNG"  class="center" style="width:80%"  alt="VSM Manual" title=""/>
+					<center>
+						<img src="img/layout.PNG"  class="center" style="width:80%"  alt="VSM Manual" title=""/>
+					</center>
 					<br>
 					
 					<h2>Identificación y caracterización de peligros</h2>
 					<p  style="text-align:justify">Se realizó la determinación de peligros y para su identificación de niveles de riesgo se estableció una clasificación basada en nivel de probabilidad y de impacto que pueda tener la ocurrencia de éste evento sobre el proceso, para ello se usó una escala de 1 a 3 donde 1 es baja probabilidad y bajo impacto, 2 es medio y 3 alto. Posteriormente la combinación de estos dos factores determina el nivel de riesgo en una escala de bajo, medio, alto o extremo.</p>
-					<img src="img/Nivel_peligro.png"  class="center" style="max-width: 40%; height: auto; "  alt="VSM Manual" title=""/>
-					<br>
-					<img src="img/Tabla_peligros.jpg"  class="center" style="width:50%"  alt="VSM Manual" title=""/>
+					<center>
+						<img src="img/Nivel_peligro.png"  class="center" style="max-width: 40%; height: auto; "  alt="VSM Manual" title=""/>
+						<br>
+						<img src="img/Tabla_peligros.jpg"  class="center" style="width:50%"  alt="VSM Manual" title=""/>
+					</center>
 
+					<h2>Modelo de la celda robotizada</h2>
+					<center>
+						<img src="img/celda.png"  class="center" style="max-width: 60%; height: auto; "  alt="VSM Manual" title=""/>
+						<br>
+						<img src="img/celdasc.png"  class="center" style="width:60%"  alt="VSM Manual" title=""/>
+					</center>
 					<h2>Simulación en RobotStudio</h2>
-					<img src="img/Celda_RS.png"  class="center" style="width:50%"  alt="VSM Manual" title=""/>
+					<center>
+						<iframe src="https://drive.google.com/file/d/17xiKXewTW2rujdQEuNQvbgESwFoC6_yp/preview" width="720" height="405" allow="fullscreen" allow="autoplay"></iframe>
+					</center>
 					<br>
-				
+					
 				</div>
 			</div>
 
@@ -131,7 +222,7 @@
 					Repositorio de Trabajo en Github (Enlace)
 					<a href="https://github.com/UNAL-APM-A3J-AUTOSEATS" class="github"><i class="fa fa-github"></i></a> 
 					&nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp
-					<img src="img/Escudo1.png">  
+					<img src="img/Escudo1.png"> 
 					<img src="img/Escudo2.png"> 
 					</div>
 				</div>
